@@ -22,7 +22,7 @@ const FetchtWebRepos = () => {
 };
 
 const FetchLocalRepos = () => {
-  fetch("../projects/index.json")
+  fetch("https://raw.githubusercontent.com/Hiper1125/portfolio/main/projects/index.json")
     .then((res) => res.json())
     .then((repos) => {
       for (var i = 0; i < Object.keys(repos).length; i++) {
