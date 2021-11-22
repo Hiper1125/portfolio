@@ -1,7 +1,7 @@
 {
   "name": "Qubs",
   "description": "Qubs is a simple game made with unity",
-  "image": "../img/projects/qubs.png",
+  "image": "https://hiper1125.github.io/portfolio/img/projects/qubs.png",
   "languages": {
     "0": "C#"
   },
