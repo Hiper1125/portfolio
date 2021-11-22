@@ -38,7 +38,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.json = function () {
-  return "../projects/" + this.toLowerCase() + ".json";
+  return "https://raw.githubusercontent.com/Hiper1125/portfolio/main/projects/" + this.toLowerCase() + ".json";
 };
 
 const InjectProject = (name, description, url, logo, icon) => {
