@@ -1,0 +1,11 @@
+{
+  "name": "Simply RPG",
+  "description": "Simply RPG is a documentation book for playing Dungeons And Dragons",
+  "image": "../img/projects/dnd.png",
+  "languages": {
+    "0": "Google Docs"
+  },
+  "icon": "fas fa-eye",
+  "url": "../res/easy-dnd.pdf",
+  "type": "pdf"
+}

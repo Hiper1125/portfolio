@@ -1,0 +1,11 @@
+{
+  "name": "Qubs",
+  "description": "Qubs is a simple game made with unity",
+  "image": "../img/projects/qubs.png",
+  "languages": {
+    "0": "C#"
+  },
+  "icon": "fas fa-external-link-alt",
+  "url": "https://guerrini.itch.io/qubs",
+  "type": "external"
+}
