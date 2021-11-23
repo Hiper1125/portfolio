@@ -5,12 +5,13 @@ $(document).ready(function () {
 
 const CardClick = () => {
     $(document.body).on("click",".card", function(){
-    Open($(this).children('#link').attr("href"), name, true);
+    Open($(this).children('#link').attr("href"), "Link", true);
   });
   
   $(document.body).on("click","#link", function(e){
     e.preventDefault();
     e.stopPropagation();
+    Open($(this).attr("href"), "Link", true);
   });
 } 
   
