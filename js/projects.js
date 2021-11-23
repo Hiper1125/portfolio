@@ -7,6 +7,11 @@ const CardClick = () => {
     $(document.body).on("click",".card", function(){
     Open($(this).children('#link').attr("href"), name, true);
   });
+  
+  $(document.body).on("click","#link", function(e){
+    e.preventDefault();
+    e.stopPropagation();
+  });
 } 
   
 const Projects = () => {
