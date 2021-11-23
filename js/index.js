@@ -42,6 +42,8 @@ const Links = () => {
         arrowShow: false,
         autoHideDelay: 3000,
       });
+    } else if (name == "down") {
+      ScrollTo("#projects");
     } else {
       let msg = "Opening " + name;
       let url = $(this).attr("href");
@@ -67,6 +69,6 @@ const Open = (url, name, newWindow = false) => {
 
     window.open(url, name, params);
   } else {
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   }
 };
