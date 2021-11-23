@@ -1,7 +1,14 @@
 $(document).ready(function () {
   Projects();
+  CardClick();
 });
 
+const CardClick = () => {
+    $(".card").click(function(){
+    Open($(this).children('#link').attr("href"), name, true);
+  });
+} 
+  
 const Projects = () => {
   FetchLocalRepos();
   FetchtWebRepos();
@@ -45,8 +52,4 @@ const InjectProject = (name, description, url, logo, icon) => {
   $("#projects-grid").append(
     `<div class='card'><img src='${logo}'><div><h1 class='text-xl md:text-2xl font-bold'>${name}</h1><h2 class='text-xs md:text-base'>${description}</h2></div><a id='link' href='${url}' target="_blank"><i class='${icon}'></i></a></div>`
   );
-
-  $(".card").click(function(){
-    Open($(this).children('#link').attr("href"), name, true);
-  });
 };
