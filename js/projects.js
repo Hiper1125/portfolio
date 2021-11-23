@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 
 const CardClick = () => {
-    $(".card").click(function(){
+    $(document.body).on("click",".card", function(){
     Open($(this).children('#link').attr("href"), name, true);
   });
 } 
