@@ -29,7 +29,7 @@ const FetchtWebRepos = () => {
 
       let logo = "https://raw.githubusercontent.com/Hiper1125/" + repos[k].name + "/main/logo.png";
 
-      InjectProject(name, description, url, logo, "fas fa-external-link-alt");
+      InjectProject(name, description, url, logo, "fab fa-github");
     }
   });
 };
