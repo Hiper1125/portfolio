@@ -56,6 +56,6 @@ String.prototype.json = function () {
 
 const InjectProject = (name, description, url, logo, icon) => {
   $("#projects-grid").append(
-    `<div class='card transition duration-250 ease-in-out transform hover:-translate-y-1'><img src='${logo}'><div><h1 class='text-xl md:text-2xl font-bold'>${name}</h1><h2 class='text-xs md:text-base'>${description}</h2></div><a id='link' href='${url}' target="_blank"><i class='${icon}'></i></a></div>`
+    `<div class='card transition duration-250 ease-in-out transform hover:-translate-y-1'><img src='${logo}'><div><h1 class='text-xl md:text-2xl font-bold'>${name}</h1><h2 style="width:calc(100% - 40px)" class='text-xs md:text-base'>${description}</h2></div><a id='link' href='${url}' class='icon realtive' target="_blank"><i class='${icon} mr-1'></i><i class='fas fa-xs fa-external-link-alt' style="font-size: 0.75rem;"></i></a></div>`
   );
 };
