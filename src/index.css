@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .selectDisable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+
+  .selectEnable {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body,
+html {
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+  box-shadow: inset 0 0 6px rgba(2, 2, 2, 0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(2, 2, 2, 0.3);
+	border-radius: 10px;
+	background-color: #0d0d0d;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #0d0d0d;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(2, 2, 2, 0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(2, 2, 2, 0.3);
+	background-color: rgb(255, 255, 255);
+}
