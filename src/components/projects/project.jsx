@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import $ from "jquery";
+import { useContext } from "react";
+import { useProjectContext } from "../../context/ProjectContext";
 
-const Project = ({ name, description, index }) => {
-  const [open, setOpened] = useState(false);
+const Project = ({ name, description }) => {
+  const { open, setOpen } = useProjectContext();
 
   const openProject = (e) => {
     e.preventDefault();
 
-    console.log("This is ", index, " and has ", open);
+    const project = $(e.currentTarget);
+    console.log(project);
 
-    if ($(e.currentTarget).hasClass(".project-open-" + index)) return;
+    if (project.hasClass("project-open")) return;
 
-    setOpened(true);
+    setOpen(true);
 
-    $(e.currentTarget)
+    project
       .css({
         height: ($(e.currentTarget).height() / window.innerHeight) * 100 + "%",
         width: ($(e.currentTarget).width() / window.innerWidth) * 100 + "%",
@@ -25,6 +28,8 @@ const Project = ({ name, description, index }) => {
         left:
           ($(e.currentTarget).offset().left / window.innerWidth) * 100 + "%",
       })
+      .removeClass("w-full h-full z-60 group absolute cursor-pointer")
+      .addClass("project-open z-[2000] fixed")
       .animate(
         {
           height: "50%",
@@ -36,48 +41,6 @@ const Project = ({ name, description, index }) => {
       );
   };
 
-  $(document.body).on("click", ".overlay", (e) => {
-    if ($('[class*="project-open-"]').get()[0].id != "project-" + index) {
-      console.log("Non aperto perché l'index era: ", index);
-      return;
-    } else {
-      e.stopImmediatePropagation();
-      e.stopPropagation();
-    }
-
-    console.log("true");
-
-    const project = $(".project-open-" + index);
-
-    project
-      .animate(
-        {
-          height: (project.parent().height() / window.innerHeight) * 100 + "%",
-          width: (project.parent().width() / window.innerWidth) * 100 + "%",
-          top:
-            ((project.parent().offset().top - $(window).scrollTop()) /
-              window.innerHeight) *
-              100 +
-            "%",
-          left:
-            (project.parent().offset().left / window.innerWidth) * 100 + "%",
-        },
-        300
-      )
-      .promise()
-      .done(() => {
-        //project.removeAttr("style");
-        /*$(".project-open-" + index).addClass(
-          "w-full h-full z-60 group absolute cursor-pointer"
-        );
-        $(".project-open-" + index).removeClass(
-          "z-[2000] project-open-" + index + " fixed"
-        );*/
-        setOpened(false);
-        console.log("Called setOpened to false now is ", open);
-      });
-  });
-
   return (
     <div className="project-container relative h-[300px] w-auto">
       <div
@@ -87,12 +50,7 @@ const Project = ({ name, description, index }) => {
       ></div>
 
       <div
-        className={`project bg-[#202020] rounded-lg selectDisable transform ${
-          open
-            ? `z-[2000] project-open-${index} fixed`
-            : "w-full h-full z-60 group absolute cursor-pointer"
-        }`}
-        id={"project-" + index}
+        className={`project bg-[#202020] rounded-lg selectDisable transform w-full h-full z-60 group absolute cursor-pointer`}
         onClick={openProject}
       >
         <div className="absolute project-info pl-4 pt-4 z-[3]">
