@@ -1,24 +1,34 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const NavItem = ({name}) => {
-  const [active, setActive] = useState(false);
+const NavItem = ({ name, isActive }) => {
+  const linkPage = "/" + name.toLowerCase();
 
   return (
-    <div className="nav-item selectDisable">
-      <h2 className={`text-xl cursor-pointer ${active ? 'font-normal' : 'font-light'}`} onClick={() => setActive(true)}>{name}</h2>
-    </div>
+    <NavLink
+      className={(navData) =>
+        navData.isActive
+          ? "font-normal transition-all duration-100"
+          : "font-light transition-all duration-100"
+      }
+      to={linkPage}
+    >
+      <div className="nav-item selectDisable">
+        <h2 className="text-xl cursor-pointer">{name}</h2>
+      </div>
+    </NavLink>
   );
 };
 
 NavItem.defaultProps = {
   name: "Section",
-  isActive: false
+  isActive: false,
 };
 
 NavItem.propTypes = {
-    name: PropTypes.string,
-    isActive: PropTypes.bool
-}
+  name: PropTypes.string,
+  isActive: PropTypes.bool,
+};
 
 export default NavItem;

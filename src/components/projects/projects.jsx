@@ -1,9 +1,11 @@
 import Project from "./project";
 import { createContext } from 'react';
 
+import {default as JSONProject} from "../../data/projects/projects";
+
 const Projects = () => {
   // TODO Ottenere i progetti
-  const projects = [
+  let projects = [
     { name: "Project Name", description: "Long project description goes here" },
     { name: "Project Name", description: "Long project description goes here" },
     { name: "Project Name", description: "Long project description goes here" },
@@ -16,6 +18,7 @@ const Projects = () => {
     { name: "Project Name", description: "Long project description goes here" },
     { name: "Project Name", description: "Long project description goes here" },
   ];
+  projects = projects.concat(JSONProject);
 
   return (
     <div className="projects p-5 w-full">

@@ -5,16 +5,17 @@ import { useProjectContext } from "../../context/ProjectContext";
 
 const Project = ({ name, description }) => {
   const { open, setOpen } = useProjectContext();
+  const [imOpen, setImOpen] = useState(false);
 
   const openProject = (e) => {
     e.preventDefault();
 
     const project = $(e.currentTarget);
-    console.log(project);
 
     if (project.hasClass("project-open")) return;
 
     setOpen(true);
+    setImOpen(true);
 
     project
       .css({
@@ -32,14 +33,19 @@ const Project = ({ name, description }) => {
       .addClass("project-open z-[2000] fixed")
       .animate(
         {
-          height: "50%",
+          height: "80%",
           width: "50%",
-          top: "25%",
+          top: "10%",
           left: "25%",
         },
         300
       );
   };
+
+  $(".overlay").on("click", () => {
+    if (!imOpen) return;
+    setImOpen(false);
+  });
 
   return (
     <div className="project-container relative h-[300px] w-auto">
@@ -53,16 +59,30 @@ const Project = ({ name, description }) => {
         className={`project bg-[#202020] rounded-lg selectDisable transform w-full h-full z-60 group absolute cursor-pointer`}
         onClick={openProject}
       >
-        <div className="absolute project-info pl-4 pt-4 z-[3]">
-          <h2 className="text-3xl font-bold">{name}</h2>
-          <h3>{description}</h3>
+        <div
+          className={`${imOpen ? "absolute project-info pl-4 pt-4 z-[3]" : "absolute project-info pl-4 pt-4 z-[3]"}`}
+        >
+          <h2 className={`${imOpen ? 'text-6xl font-bold' : 'text-3xl font-bold'}`}>{name}</h2>
+          <h3
+            className={`${
+              imOpen
+                ? "opacity-0 transition-all duration-300"
+                : "opacity-100 transition-all duration-300"
+            }`}
+          >
+            {description}
+          </h3>
         </div>
 
-        <div className={"w-full h-full relative rounded-lg overflow-hidden"}>
-          <div className="w-full h-[300px] bg-black z-[2] opacity-30 group-hover:opacity-80 transition-all duration-[1500ms] absolute top-0 left-0 rounded-lg"></div>
+        <div
+          className={`w-full ${
+            imOpen ? "h-[150px]" : "h-[300px]"
+          } relative rounded-lg overflow-hidden transition-all duration-300`}
+        >
+          <div className="w-full h-full bg-black z-[2] opacity-30 group-hover:opacity-80 transition-all duration-[1500ms] absolute top-0 left-0 rounded-lg"></div>
           <img
             src="https://picsum.photos/300/300"
-            className="w-full h-[300px] z-[1] absolute top-0 left-0 transform transition duration-1000 rounded-lg group-hover:scale-125 group-hover:translate-x-6 mask-inside"
+            className={`w-full h-full z-[1] absolute top-0 left-0 transform transition duration-1000 rounded-lg group-hover:scale-125 group-hover:translate-x-6 mask-inside object-cover`}
           ></img>
         </div>
       </div>

@@ -10,9 +10,9 @@ const Overlay = () => {
 
     const project = $(".project-open");
 
-        console.log(project);
-
     if (project.length === 0 || !visible) return;
+
+    setVisibile(false);
 
     project.animate(
       {
@@ -38,7 +38,6 @@ const Overlay = () => {
         });
 
         project.removeClass("project-open");
-        setVisibile(false);
       }
     );
   };
@@ -46,7 +45,7 @@ const Overlay = () => {
   return (
     <div
       className={`overlay w-full h-screen top-0 bg-black z-[100] selectDisable transition-opacity duration-300 ${
-        visible ? "fixed opacity-60" : "fixed opacity-0 pointer-events-none"
+        visible ? "fixed opacity-90" : "fixed opacity-0 pointer-events-none"
       }`}
       onClick={closeProject}
     ></div>
