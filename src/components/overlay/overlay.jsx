@@ -40,6 +40,10 @@ const Overlay = () => {
         project.removeClass("project-open");
       }
     );
+
+    $("body").css({
+      overflow: "auto"
+    })
   };
 
   return (

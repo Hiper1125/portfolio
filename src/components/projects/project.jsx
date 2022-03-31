@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import $ from "jquery";
-import { useContext } from "react";
 import { useProjectContext } from "../../context/ProjectContext";
 
 const Project = ({ name, description }) => {
@@ -40,6 +39,10 @@ const Project = ({ name, description }) => {
         },
         300
       );
+
+    $("body").css({
+      overflow: "hidden",
+    });
   };
 
   $(".overlay").on("click", () => {
@@ -51,12 +54,12 @@ const Project = ({ name, description }) => {
     <div className="project-container relative h-[300px] w-auto">
       <div
         className={
-          "project-bg w-full h-full bg-[#202020] opacity-30 rounded-lg selectDisable cursor-pointer absolute"
+          "project-bg w-full h-full bg-[#202020] opacity-30 selectDisable cursor-pointer absolute rounded-lg"
         }
       ></div>
 
       <div
-        className={`project bg-[#202020] rounded-lg selectDisable transform w-full h-full z-60 group absolute cursor-pointer`}
+        className={`project bg-[#202020] rounded-lg overflow-hidden selectDisable transform w-full h-full z-60 group absolute cursor-pointer`}
         onClick={openProject}
       >
         <div
@@ -64,17 +67,25 @@ const Project = ({ name, description }) => {
             imOpen ? "h-[150px]" : "h-[300px]"
           }  transition-all duration-300`}
         >
-          <div className="project-bg w-full h-full absolute top-0 left-0 overflow-hidden rounded-lg">
-            <div className="w-full h-full bg-black z-[2] opacity-30 group-hover:opacity-80 transition-all duration-[1500ms] absolute top-0 left-0"></div>
+          <div className="project-img overflow-hidden w-full h-full absolute top-0 left-0">
+            <div
+              className={`w-full h-full bg-black z-[2] group-hover:opacity-80 transition-all absolute top-0 left-0 ${
+                imOpen
+                  ? "duration-300 opacity-80"
+                  : "opacity-30 duration-[1500ms]"
+              }`}
+            ></div>
             <img
               src="https://picsum.photos/300/300"
-              className={`w-full h-full z-[1] absolute top-0 left-0 transform transition duration-1000 group-hover:scale-125 group-hover:translate-x-6 mask-inside object-cover`}
+              className={`w-full h-full z-[1] absolute top-0 left-0 transform transition duration-[1500ms] group-hover:scale-125 group-hover:translate-x-6 mask-inside object-cover`}
             ></img>
           </div>
-          
+
           <div
             className={`project-text absolute ${
-              imOpen ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" : "top-0 left-0 -translate-x-0 -translate-y-0"
+              imOpen
+                ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                : "top-0 left-0 -translate-x-0 -translate-y-0"
             }  p-4 transition-all duration-300 z-[3]`}
           >
             <h2
@@ -93,8 +104,89 @@ const Project = ({ name, description }) => {
             </h3>
           </div>
         </div>
+
+        <div className="project-description w-screen h-screen fixed -top-[12.5%] -left-[50%] overflow-y-scroll">
+          <div className="w-[50.5%] pt-[calc(10%+150px)] pb-[10%] ml-[calc(25%+5px)] p-4">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum
+              dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit
+              amet consectetur adipisicing elit.
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div></div>
+        </div>
       </div>
-    </div>
   );
 };
 

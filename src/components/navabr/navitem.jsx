@@ -9,8 +9,8 @@ const NavItem = ({ name, isActive }) => {
     <NavLink
       className={(navData) =>
         navData.isActive
-          ? "font-normal transition-all duration-100"
-          : "font-light transition-all duration-100"
+          ? "font-normal opacity-100 transition-all duration-100"
+          : "font-normal opacity-60 transition-all duration-100 hover:opacity-75"
       }
       to={linkPage}
     >
