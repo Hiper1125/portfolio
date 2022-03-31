@@ -60,30 +60,38 @@ const Project = ({ name, description }) => {
         onClick={openProject}
       >
         <div
-          className={`${imOpen ? "absolute project-info pl-4 pt-4 z-[3]" : "absolute project-info pl-4 pt-4 z-[3]"}`}
-        >
-          <h2 className={`${imOpen ? 'text-6xl font-bold' : 'text-3xl font-bold'}`}>{name}</h2>
-          <h3
-            className={`${
-              imOpen
-                ? "opacity-0 transition-all duration-300"
-                : "opacity-100 transition-all duration-300"
-            }`}
-          >
-            {description}
-          </h3>
-        </div>
-
-        <div
-          className={`w-full ${
+          className={`project-info relative w-full ${
             imOpen ? "h-[150px]" : "h-[300px]"
-          } relative rounded-lg overflow-hidden transition-all duration-300`}
+          }  transition-all duration-300`}
         >
-          <div className="w-full h-full bg-black z-[2] opacity-30 group-hover:opacity-80 transition-all duration-[1500ms] absolute top-0 left-0 rounded-lg"></div>
-          <img
-            src="https://picsum.photos/300/300"
-            className={`w-full h-full z-[1] absolute top-0 left-0 transform transition duration-1000 rounded-lg group-hover:scale-125 group-hover:translate-x-6 mask-inside object-cover`}
-          ></img>
+          <div className="project-bg w-full h-full absolute top-0 left-0 overflow-hidden rounded-lg">
+            <div className="w-full h-full bg-black z-[2] opacity-30 group-hover:opacity-80 transition-all duration-[1500ms] absolute top-0 left-0"></div>
+            <img
+              src="https://picsum.photos/300/300"
+              className={`w-full h-full z-[1] absolute top-0 left-0 transform transition duration-1000 group-hover:scale-125 group-hover:translate-x-6 mask-inside object-cover`}
+            ></img>
+          </div>
+          
+          <div
+            className={`project-text absolute ${
+              imOpen ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" : "top-0 left-0 -translate-x-0 -translate-y-0"
+            }  p-4 transition-all duration-300 z-[3]`}
+          >
+            <h2
+              className={`transition-all duration-300 block w-fit ${
+                imOpen ? "text-6xl font-bold " : "text-3xl font-bold"
+              }`}
+            >
+              {name}
+            </h2>
+            <h3
+              className={`transition-all duration-300 ${
+                imOpen ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              {description}
+            </h3>
+          </div>
         </div>
       </div>
     </div>
