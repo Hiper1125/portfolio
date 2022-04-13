@@ -41,7 +41,7 @@ const MenuItems = ({ items }) => {
     $(".menu-text").addClass("rotate-[-180deg]");
     $(".menu-text").addClass("translate-y-[5px]");
     $(".menu-items").removeClass("opacity-0");
-    $(".menu-items").addClass("opacity-100");
+    $(".menu-items").addClass("opacity-90");
     $(".menu-items").removeClass("pointer-events-none");
 
     $(".menu-item").each(function (index, item) {
@@ -83,7 +83,7 @@ const MenuItems = ({ items }) => {
         $(".menu-text").text("☰");
         $(".menu-text").removeClass("rotate-[-180deg]");
         $(".menu-text").removeClass("translate-y-[5px]");
-        $(".menu-items").removeClass("opacity-100");
+        $(".menu-items").removeClass("opacity-90");
         $(".menu-items").addClass("opacity-0");
         $(".menu-items").addClass("pointer-events-none");
         isAnimating = false;
