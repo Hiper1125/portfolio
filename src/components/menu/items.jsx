@@ -12,7 +12,7 @@ const MenuItems = ({ items }) => {
   $(document).on("click", ".menu", function () {
     if (!isAnimating) {
       isAnimating = true;
-      isOpen ? closeMenu(textFadeSpeed, menuCloseDelay) : openMenu();
+      isOpen ? closeMenu(textFadeSpeed, 0) : openMenu();
     } else {
       return;
     }
