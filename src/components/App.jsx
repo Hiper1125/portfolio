@@ -19,7 +19,7 @@ const App = () => {
       <div className="App w-full h-screen">
         <ReactNotifications className="selectDisable" />
         <Menu/>
-        <MenuItems items={["project", "about", "contact"]} />
+        <MenuItems items={["projects", "about", "contact"]} />
         <Header />
         <Main />
         <Footer />

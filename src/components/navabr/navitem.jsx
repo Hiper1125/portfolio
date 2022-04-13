@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const NavItem = ({ name, isActive }) => {
+const NavItem = ({name}) => {
   const linkPage = "/" + name.toLowerCase();
 
   return (

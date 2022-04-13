@@ -7,26 +7,7 @@ const Footer = () => {
         {new Date().getFullYear()} © Samuele Guerrini
       </h1>
 
-      <IconBar
-        icons={[
-          {
-            name: "discord",
-            link: "https://discordapp.com/users/287603404291964930",
-          },
-          {
-            name: "instagram",
-            link: "https://www.instagram.com/guerrini.samuele",
-          },
-          {
-            name: "facebook",
-            link: "https://www.facebook.com/samu.guerrini",
-          },
-          {
-            name: "github",
-            link: "https://github.com/Hiper1125",
-          }
-        ]}
-      />
+      <IconBar position={"absolute bottom-6 right-10"}/>
     </div>
   );
 };
