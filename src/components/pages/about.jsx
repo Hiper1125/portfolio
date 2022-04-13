@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="p-5 w-full">
+    <div className="p-5 h-full w-full">
         
     </div>
   );

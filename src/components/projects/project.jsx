@@ -59,7 +59,7 @@ const Project = ({ name, description }) => {
       ></div>
 
       <div
-        className={`project bg-[#202020] rounded-lg overflow-hidden selectDisable transform w-full h-full z-60 group absolute cursor-pointer`}
+        className={`project bg-[#090909] bg-opacity-80 rounded-lg overflow-hidden selectDisable transform w-full h-full z-60 group absolute cursor-pointer`}
         onClick={openProject}
       >
         <div

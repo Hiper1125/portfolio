@@ -21,7 +21,7 @@ const Projects = () => {
   projects = projects.concat(JSONProject);
 
   return (
-    <div className="projects p-5 w-full">
+    <div className="projects p-5 w-full mt-auto">
       <div className="grid grid-cols-auto-fill gap-5">
         {projects.map((project, i) => {
           return (
